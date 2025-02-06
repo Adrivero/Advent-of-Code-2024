@@ -1,0 +1,15 @@
+import re
+
+# Sample string
+text = "mul(12,34) is valid, mul(-5,3.14) is valid, but mul(a,3) is not."
+
+# Strict regex pattern
+pattern = r"mul\((-?\d+\.?\d*),(-?\d+\.?\d*)\)"
+
+# Find all matches
+matches = re.findall(pattern, text)
+
+# Extract and print values of a and b
+for match in matches:
+    a, b = match
+    print(f"a: {a}, b: {b}")
